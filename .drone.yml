@@ -6,6 +6,11 @@ steps:
 - name: build
   image: node:18.14.0
   pull: always
+    settings:             # 当前设置
+      username:           # 账号名称
+        from_secret: drone
+      password:           # 账号密码
+        from_secret: drone
   commands:
     - pwd
     - npm i
