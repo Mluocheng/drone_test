@@ -48,14 +48,16 @@ npm run build
   docker run --detach \
   --volume=/var/run/docker.sock:/var/run/docker.sock \
   --env=DRONE_RPC_PROTO=http \
-  --env=DRONE_RPC_HOST=39.108.140.204:8881 \
+  --env=DRONE_RPC_HOST=39.108.140.204:8882 \
   --env=DRONE_RPC_SECRET=cc212*******************08f1542b56 \
   --env=DRONE_RUNNER_CAPACITY=2 \
   --env=DRONE_RUNNER_NAME=gitea-drone-runner \
-  --publish=8881:3000 \
+  --publish=8882:3000 \
   --restart=always \
   --name=runner \
   drone/drone-runner-docker:1
 
-docker run --detach --volume=/var/run/docker.sock:/var/run/docker.sock --env=DRONE_RPC_PROTO=http --env=DRONE_RPC_HOST=39.108.140.204:8882 --env=DRONE_RPC_SECRET=cc212*******************08f1542b56 --env=DRONE_RUNNER_CAPACITY=2 --env=DRONE_RUNNER_NAME=gitea-drone-runner --publish=8882:3000 --restart=always --name=runner drone/drone-runner-docker:1
 
+
+ docker run --detach --volume=/var/run/docker.sock:/var/run/docker.sock --env=DRONE_RPC_PROTO=http --env=DRONE_RPC_HOST=39.108.140.204:8881 --env=DRONE_RPC_SECRET=599bac154c0289f087bf50de0a4861b0 --env=DRONE_RUNNER_CAPACITY=2 --env=DRONE_RUNNER_NAME=drone --publish=8882:3000 --restart=always --name=runner drone/drone-runner-docker:1
+ 保存：level=error msg="cannot ping the remote server" error="Post \"http://drone_dev.luocheng.fun/rpc/v2/ping\": dial tcp 39.108.140.204:80: connect: connection refused"， 如何解决
