@@ -3,56 +3,14 @@ type: docker
 name: default
 
 steps:
-- name: install && build
-  image: zhoukingzz/blog-node-module:v3
+- name: build
+  image: node:16.13.2
   pull: always
   commands:
     - pwd
-    - ls -la
-    - ln -sfn /drone_test/node_modules node_modules
-    - ls -la
+    - npm i
     - npm run build
     - ls -la
-
-- name: scp
-  image: appleboy/drone-scp
-  pull: always
-  settings:
-    debug: true
-    source:
-      - dist/
-    host:
-      from_secret: DRONE_HOST
-    username: 
-      from_secret: DRONE_NAME
-    port: 
-      from_secret: DRONE_PORT
-    password:
-      from_secret: DRONE_PSW
-    target:
-      from_secret: DRONE_DICT
-    when:
-      branch:
-        include:
-          - master
-      event:
-        - push
-        - merge
-
-- name: commands
-  image: appleboy/drone-ssh
-  pull: always
-  settings:
-    host:
-      from_secret: DRONE_HOST
-    username: 
-      from_secret: DRONE_NAME
-    port: 
-      from_secret: DRONE_PORT
-    password:
-      from_secret: DRONE_PSW
-    script:
-      - nginx -s reload
       
 trigger:
   branch:
