@@ -12,8 +12,12 @@ jobs:
 
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
+        # uses: JamesIves/github-pages-deploy-action@4.1.1
+        # with:
+        #   branch: gh-pages
+        #   folder: public
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: drone_test/build
+          BRANCH: master
+          FOLDER: build
           BUILD_SCRIPT: npm install && npm run build
