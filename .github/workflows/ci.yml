@@ -19,7 +19,7 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
-          token: ${{ secrets.ACCESS_TOKEN }}
+          # token: ${{ secrets.ACCESS_TOKEN }}
         # env:
         #   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         #   # BRANCH: master
