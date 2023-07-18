@@ -11,9 +11,9 @@ jobs:
         uses: actions/checkout@master
 
       - name: Build and Deploy
-        uses: MLcheng/drone_test@master
+        uses: Mluocheng/github-pages-deploy-action@dev
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: drone_test
           BUILD_SCRIPT: npm install && npm run build
