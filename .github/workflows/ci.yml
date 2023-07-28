@@ -20,8 +20,9 @@ jobs:
           branch: gh-pages
           folder: dist
           # token: ${{ secrets.ACCESS_TOKEN }}
-        # env:
-        #   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_REPOSITORY: drone_test
         #   # BRANCH: master
         #   # FOLDER: build
         #   BUILD_SCRIPT: npm install && npm run build
