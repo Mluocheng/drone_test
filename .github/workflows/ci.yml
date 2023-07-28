@@ -22,9 +22,9 @@ jobs:
           # token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Build and deploy with gh-pages
-#         run: |
-#           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-#           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <mluocheng@github.com>"
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           GITHUB_REPOSITORY: drone_test
