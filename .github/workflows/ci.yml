@@ -24,7 +24,7 @@ jobs:
       - name: Build and deploy with gh-pages
         run: |
           git remote set-url origin https://github.com/Mluocheng/drone_test.git
-          npm run deploy -- -u "github-actions-bot 2929482329@qq.com"
+          npm run deploy -- -u "mluocheng 2929482329@qq.com"
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           GITHUB_REPOSITORY: drone_test
